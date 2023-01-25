@@ -6,6 +6,7 @@ Please keep in mind that this product is a prerelease and that it will be subjec
 You can try the following things:
 - https://files.jederu.nl/backgroundx-demo/ (clock)
 - https://files.jederu.nl/backgroundx-demo/ryan/ (video)
+- https://files.jederu.nl/backgroundx-demo/snow/ (snow)
 
 ## Contributing
 Feel free to contribute and create issues. I'll try to address them as quickly as possible
