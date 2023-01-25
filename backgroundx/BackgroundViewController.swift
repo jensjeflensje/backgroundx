@@ -34,8 +34,7 @@ class BackgroundViewController: NSViewController {
         let config = WKWebViewConfiguration()
         config.preferences.setValue(true, forKey: "allowsInlineMediaPlayback")
         view = WKWebView(frame:self.view.frame, configuration: config)
-        let screenSize = NSScreen.main
-        self.view.frame = CGRect(x: 0, y: 0, width: screenSize?.frame.width ?? 1920, height: screenSize?.frame.height ?? 1080)
+        self.view.frame = CGRect(x: 0, y: 0, width: self.view.window?.screen?.frame.width ?? 1920, height: self.view.window?.screen?.frame.height ?? 1080)
     }
 
     override func viewDidLoad() {
