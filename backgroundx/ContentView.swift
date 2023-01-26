@@ -8,11 +8,6 @@
 import SwiftUI
 
 
-
-func loadWebPage(url: String) {
-    
-}
-
 struct ContentView: View {
     
     @State private var url: String = ""
@@ -32,9 +27,9 @@ struct ContentView: View {
             Button(
               "Open as wallpaper",
               action: {
-                  DispatchQueue.main.async {
-                    currentWindow.setWindow(url: url)
-                  }
+                  let parsedURL = URL(string: url)
+                  if (parsedURL == nil) { return }
+                  currentWindow.setWindow(url: parsedURL!)
               }
             )
         }

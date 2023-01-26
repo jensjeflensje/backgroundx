@@ -10,15 +10,16 @@ import WebKit
 
 class BackgroundViewController: NSViewController {
     
-    var url = ""
+    var url: URL?
 
     var webView: WKWebView {
         return view as! WKWebView
     }
     
-    init(url: String) {
-        super.init(nibName: nil, bundle: nil)
+    init(url: URL) {
         self.url = url
+        super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -26,7 +27,8 @@ class BackgroundViewController: NSViewController {
     }
     
     func close() {
-        self.view.window?.windowController?.close()
+        self.view.removeFromSuperview()
+        self.removeFromParent()
     }
 
     override func loadView() {
@@ -40,8 +42,6 @@ class BackgroundViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (self.url != "") {
-            webView.load(URLRequest(url: URL(string: self.url)!))
-        }
+        webView.load(URLRequest(url: self.url!))
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B49BB7A32981300000864F51 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49BB7A12981300000864F51 /* BackgroundViewController.swift */; };
 		B49BB7A42981300000864F51 /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B49BB7A22981300000864F51 /* BackgroundViewController.xib */; };
-		B49BB7A82981B9EA00864F51 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B49BB7A72981B9EA00864F51 /* .gitignore */; };
 		B4DD8A5329805BD800FFCABB /* backgroundxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8A5229805BD800FFCABB /* backgroundxApp.swift */; };
 		B4DD8A5529805BD800FFCABB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8A5429805BD800FFCABB /* ContentView.swift */; };
 		B4DD8A5729805BD900FFCABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DD8A5629805BD900FFCABB /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		B49BB7A12981300000864F51 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		B49BB7A22981300000864F51 /* BackgroundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundViewController.xib; sourceTree = "<group>"; };
-		B49BB7A72981B9EA00864F51 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B4DD8A4F29805BD800FFCABB /* backgroundx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = backgroundx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DD8A5229805BD800FFCABB /* backgroundxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundxApp.swift; sourceTree = "<group>"; };
 		B4DD8A5429805BD800FFCABB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				B4DD8A6129805F0000FFCABB /* BackgroundWindow.swift */,
 				B49BB7A12981300000864F51 /* BackgroundViewController.swift */,
 				B49BB7A22981300000864F51 /* BackgroundViewController.xib */,
-				B49BB7A72981B9EA00864F51 /* .gitignore */,
 			);
 			path = backgroundx;
 			sourceTree = "<group>";
@@ -139,7 +136,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B49BB7A82981B9EA00864F51 /* .gitignore in Resources */,
 				B4DD8A5A29805BD900FFCABB /* Preview Assets.xcassets in Resources */,
 				B49BB7A42981300000864F51 /* BackgroundViewController.xib in Resources */,
 				B4DD8A5729805BD900FFCABB /* Assets.xcassets in Resources */,
@@ -291,6 +287,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BackgroundX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,6 +318,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BackgroundX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

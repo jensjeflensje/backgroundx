@@ -14,7 +14,7 @@ class BackgroundWindow: NSObject, NSApplicationDelegate {
     
     var controllers: Array<BackgroundViewController> = []
 
-    func setWindow(url: String) {
+    func setWindow(url: URL) {
         self.resetWindow()
         
         let title: String = "BackgroundX"
@@ -52,13 +52,16 @@ class BackgroundWindow: NSObject, NSApplicationDelegate {
     }
     
     func resetWindow() {
-        if (self.controllers.isEmpty) {
-            var i = 0
+        if (!self.controllers.isEmpty) {
             for controller in self.controllers {
                 controller.close()
-                self.controllers.remove(at: i)
-                i += 1
             }
+            for window in self.windows {
+                window.isReleasedWhenClosed = false
+                window.close()
+            }
+            self.controllers.removeAll()
+            self.windows.removeAll()
         }
     }
     
