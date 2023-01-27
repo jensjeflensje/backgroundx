@@ -8,11 +8,34 @@
 import SwiftUI
 
 
+struct Screen: Identifiable, Hashable {
+    let id = UUID()
+    let name: String
+    let screen: NSScreen
+}
+
+
 struct ContentView: View {
     
     @State private var url: String = ""
+    @State private var chosenScreens = Set<Screen>()
     
     var currentWindow: BackgroundWindow = BackgroundWindow()
+    
+    var screens = [Screen]()
+    
+    init() {
+        for screen in NSScreen.screens {
+            let screenObj = Screen(name: screen.localizedName, screen: screen)
+            screens.append(screenObj)
+        }
+    }
+    
+    func render() {
+        let parsedURL = URL(string: url)
+        if (parsedURL == nil) { return }
+        currentWindow.setWindow(url: parsedURL!, screens: chosenScreens)
+    }
     
     var body: some View {
         VStack {
@@ -24,12 +47,22 @@ struct ContentView: View {
                 "Website URL",
                 text: $url
             )
+            if #available(macOS 13.0, *) {
+                List(self.screens, id: \.self, selection: $chosenScreens) { screen in
+                    Text(screen.name)
+                }
+                .onAppear {
+                    for screen in self.screens {
+                        chosenScreens.insert(screen)
+                    }
+                }
+            } else {
+                Text("Screen selection is only available on macOS 13.0 and higher.")
+            }
             Button(
-              "Open as wallpaper",
+              "Save",
               action: {
-                  let parsedURL = URL(string: url)
-                  if (parsedURL == nil) { return }
-                  currentWindow.setWindow(url: parsedURL!)
+                  render()
               }
             )
         }

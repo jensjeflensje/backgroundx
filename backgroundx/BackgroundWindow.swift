@@ -14,20 +14,20 @@ class BackgroundWindow: NSObject, NSApplicationDelegate {
     
     var controllers: Array<BackgroundViewController> = []
 
-    func setWindow(url: URL) {
+    func setWindow(url: URL, screens: Set<Screen>) {
         self.resetWindow()
         
         let title: String = "BackgroundX"
         let level: NSWindow.Level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.desktopWindow)))
          
-        for screen in NSScreen.screens {
+        for screen in screens {
             let window: NSWindow = NSWindow(contentRect: .init(origin: .zero,
-                                                               size: .init(width: screen.frame.width,
-                                                                           height: screen.frame.height)),
+                                                               size: .init(width: screen.screen.frame.width,
+                                                                           height: screen.screen.frame.height)),
                                             styleMask: [.closable],
                                             backing: .buffered,
                                             defer: false,
-                                            screen: screen
+                                            screen: screen.screen
             )
             
             window.title = title
@@ -43,8 +43,8 @@ class BackgroundWindow: NSObject, NSApplicationDelegate {
             controllers.append(controller)
             
             var pos = NSPoint()
-            pos.x = screen.frame.minX
-            pos.y = screen.frame.minY
+            pos.x = screen.screen.frame.minX
+            pos.y = screen.screen.frame.minY
             window.setFrameOrigin(pos)
             
             windows.append(window)
