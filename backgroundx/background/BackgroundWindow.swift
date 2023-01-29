@@ -38,7 +38,7 @@ class BackgroundWindow: NSObject, NSApplicationDelegate {
             //newWindow.backgroundColor = NSColor(calibratedHue: 0, saturation: 1.0, brightness: 0, alpha: 0.7)
             window.makeKeyAndOrderFront(nil)
             
-            let controller: BackgroundViewController = BackgroundViewController(url: url)
+            let controller: BackgroundViewController = BackgroundViewController(url: url, screen: screen)
             window.contentViewController = controller
             controllers.append(controller)
             

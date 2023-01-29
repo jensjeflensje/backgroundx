@@ -39,6 +39,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4A4DB4A29853B0200065244 /* background */ = {
+			isa = PBXGroup;
+			children = (
+				B49BB7A22981300000864F51 /* BackgroundViewController.xib */,
+				B4DD8A6129805F0000FFCABB /* BackgroundWindow.swift */,
+				B49BB7A12981300000864F51 /* BackgroundViewController.swift */,
+			);
+			path = background;
+			sourceTree = "<group>";
+		};
 		B4DD8A4629805BD800FFCABB = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +68,12 @@
 		B4DD8A5129805BD800FFCABB /* backgroundx */ = {
 			isa = PBXGroup;
 			children = (
+				B4A4DB4A29853B0200065244 /* background */,
 				B4DD8A5229805BD800FFCABB /* backgroundxApp.swift */,
 				B4DD8A5429805BD800FFCABB /* ContentView.swift */,
 				B4DD8A5629805BD900FFCABB /* Assets.xcassets */,
 				B4DD8A5B29805BD900FFCABB /* backgroundx.entitlements */,
 				B4DD8A5829805BD900FFCABB /* Preview Content */,
-				B4DD8A6129805F0000FFCABB /* BackgroundWindow.swift */,
-				B49BB7A12981300000864F51 /* BackgroundViewController.swift */,
-				B49BB7A22981300000864F51 /* BackgroundViewController.xib */,
 			);
 			path = backgroundx;
 			sourceTree = "<group>";
@@ -281,7 +289,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"backgroundx/Preview Content\"";
 				DEVELOPMENT_TEAM = DAVZFCU3ML;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -295,7 +303,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.jensderuiter.backgroundx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -312,7 +320,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"backgroundx/Preview Content\"";
 				DEVELOPMENT_TEAM = DAVZFCU3ML;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -326,7 +334,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.jensderuiter.backgroundx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

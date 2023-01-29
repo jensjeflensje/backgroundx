@@ -11,13 +11,15 @@ import WebKit
 class BackgroundViewController: NSViewController {
     
     var url: URL?
+    var screen: Screen?
 
     var webView: WKWebView {
         return view as! WKWebView
     }
     
-    init(url: URL) {
+    init(url: URL, screen: Screen) {
         self.url = url
+        self.screen = screen
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -36,7 +38,7 @@ class BackgroundViewController: NSViewController {
         let config = WKWebViewConfiguration()
         config.preferences.setValue(true, forKey: "allowsInlineMediaPlayback")
         view = WKWebView(frame:self.view.frame, configuration: config)
-        self.view.frame = CGRect(x: 0, y: 0, width: self.view.window?.screen?.frame.width ?? 1920, height: self.view.window?.screen?.frame.height ?? 1080)
+        self.view.frame = CGRect(x: 0, y: 0, width: self.screen?.screen.frame.width ?? 1920, height: self.screen?.screen.frame.height ?? 1080)
     }
 
     override func viewDidLoad() {
